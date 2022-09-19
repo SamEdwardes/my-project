@@ -29,7 +29,8 @@ ui <- fluidPage(
         # Show a plot of the generated distribution
         mainPanel(
            plotOutput("distPlot"),
-           tableOutput("penguinsData")
+           tableOutput("penguinsData"),
+           textOutput("libData")
         )
     )
 )
@@ -50,6 +51,10 @@ server <- function(input, output) {
     
     output$penguinsData <- renderTable({
       head(penguins)
+    })
+    
+    output$libData <- renderText({
+      paste(.libPaths(), collapse = " ||| ")
     })
 }
 
