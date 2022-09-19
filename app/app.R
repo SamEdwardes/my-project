@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(palmerpenguins)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -27,7 +28,8 @@ ui <- fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
-           plotOutput("distPlot")
+           plotOutput("distPlot"),
+           tableOutput("penguinsData")
         )
     )
 )
@@ -44,6 +46,10 @@ server <- function(input, output) {
         hist(x, breaks = bins, col = 'darkgray', border = 'white',
              xlab = 'Waiting time to next eruption (in mins)',
              main = 'Histogram of waiting times')
+    })
+    
+    output$penguinsData <- renderTable({
+      head(penguins)
     })
 }
 
