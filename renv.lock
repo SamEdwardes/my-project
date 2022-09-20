@@ -209,6 +209,14 @@
       "Hash": "18e9c28c1d3ca1560ce30658b22ce104",
       "Requirements": []
     },
+    "palmerpenguins": {
+      "Package": "palmerpenguins",
+      "Version": "0.1.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "9a455031890b2adf20e19784a114ddd4",
+      "Requirements": []
+    },
     "promises": {
       "Package": "promises",
       "Version": "1.2.0.1",
